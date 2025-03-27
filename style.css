@@ -1,3 +1,4 @@
+/* Basisfarben (Light & Dark) + Smooth Scroll */
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
@@ -27,6 +28,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   transition: background-color 0.3s, color 0.3s;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -95,7 +97,7 @@ button:hover {
   opacity: 0.9;
 }
 
-/* Animation */
+/* Animationen */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -109,7 +111,6 @@ button:hover {
   }
 }
 
-/* Toggle-Button */
 .theme-toggle {
   position: absolute;
   top: 1rem;

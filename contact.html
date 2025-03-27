@@ -10,27 +10,24 @@
 <body>
   <button id="theme-toggle" class="theme-toggle">🌙 / ☀️</button>
   <header>
-    <h1>Kontaktiere mich</h1>
+    <h1 class="fade-in">Kontaktiere mich</h1>
     <nav>
       <a href="index.html">Start</a>
       <a href="about.html">Über mich</a>
       <a href="contact.html">Kontakt</a>
     </nav>
   </header>
-
   <section class="content fade-in">
-    <form action="mailto:deine@email.de" method="POST" enctype="text/plain">
+    <form action="mailto:deine@email.de" method="POST" enctype="text/plain" onsubmit="return showMessage();">
       <label>Name:</label>
       <input type="text" name="name" required />
-      
       <label>E-Mail:</label>
       <input type="email" name="email" required />
-      
       <label>Nachricht:</label>
       <textarea name="message" rows="5" required></textarea>
-      
       <button type="submit">Senden</button>
     </form>
+    <p id="confirmation" style="display:none; margin-top:20px;">✅ Danke für deine Nachricht!</p>
   </section>
 </body>
 </html>
