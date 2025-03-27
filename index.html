@@ -3,36 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mein Portfolio</title>
+  <title>Mein Portfolio – Ricci</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="theme-switch">
-  <input type="checkbox" id="theme-toggle" />
-  <label for="theme-toggle" class="switch">
-    <span class="icon sun">☀️</span>
-    <span class="icon moon">🌙</span>
-    <span class="slider"></span>
-  </label>
-</div>
-  <header>
+
+  <!-- 🌗 Darkmode Toggle -->
+  <div class="theme-switch-wrapper">
+    <input type="checkbox" id="theme-switch" />
+    <label for="theme-switch" class="theme-switch">
+      <div class="icons">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </div>
+    </label>
+  </div>
+
+  <!-- Header + Navigation -->
+  <header class="header-bg">
     <h1 class="fade-in">Willkommen auf meinem Portfolio</h1>
-    <nav>
+    <nav class="desktop-nav">
       <a href="index.html">Start</a>
       <a href="about.html">Über mich</a>
       <a href="contact.html">Kontakt</a>
     </nav>
   </header>
+
   <section class="hero fade-in">
     <img src="bilder/profilbild.jpg" alt="Profilbild" />
     <h2><span id="typewriter"></span></h2>
     <p>Webdesigner | Entwickler | Kreativer Kopf</p>
-    <div class="socials">
-      <a href="https://instagram.com/" target="_blank">Instagram</a>
-      <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/" target="_blank">GitHub</a>
-    </div>
   </section>
 </body>
 </html>
