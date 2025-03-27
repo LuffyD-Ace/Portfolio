@@ -2,13 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleSwitch = document.getElementById("theme-switch");
   const savedTheme = localStorage.getItem("theme");
 
-  // Theme aus Speicher laden
   if (savedTheme === "dark") {
     document.body.classList.add("dark-mode");
     toggleSwitch.checked = true;
   }
 
-  // Umschalten bei Klick
   toggleSwitch.addEventListener("change", () => {
     if (toggleSwitch.checked) {
       document.body.classList.add("dark-mode");
@@ -19,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Optional: Typewriter
   const typewriter = document.getElementById("typewriter");
   const text = "Hi, ich bin Ricci";
   let index = 0;
