@@ -131,3 +131,48 @@ body.dark-mode .socials a {
 .socials a:hover {
   opacity: 0.8;
 }
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.contact-form label {
+  align-self: flex-start;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .contact-form button {
+  background-color: #fff;
+  color: #000;
+}
+
+.contact-form button:hover {
+  opacity: 0.9;
+}
