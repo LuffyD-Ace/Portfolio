@@ -1,40 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Scroll Animation Delay
+  const elements = document.querySelectorAll(".fade-in");
+  elements.forEach((el, index) => {
+    el.style.animationDelay = `${index * 0.2}s`;
+  });
+
   // Dark Mode Umschalter
   const toggleButton = document.getElementById("theme-toggle");
-  const mobileToggle = document.getElementById("mobile-theme-toggle");
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  const applyTheme = (theme) => {
-    if (theme === "dark") {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
-    localStorage.setItem("theme", theme);
-  };
-
   const currentTheme = localStorage.getItem("theme");
-  if (currentTheme) applyTheme(currentTheme);
-
-  const toggleTheme = () => {
-    const isDark = document.body.classList.toggle("dark-mode");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  };
-
-  if (toggleButton) toggleButton.addEventListener("click", toggleTheme);
-  if (mobileToggle) mobileToggle.addEventListener("click", toggleTheme);
-
-  // Mobiles Menü öffnen/schließen
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener("click", () => {
-      mobileMenu.style.left = mobileMenu.style.left === "0%" ? "-100%" : "0%";
-    });
+  if (currentTheme === "dark") {
+    document.body.classList.add("dark-mode");
   }
 
+  toggleButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    const mode = document.body.classList.contains("dark-mode") ? "dark" : "light";
+    localStorage.setItem("theme", mode);
+  });
+
   // Typewriter Effekt
+  const text = "Hi, ich bin [Dein Name]";
   const typewriter = document.getElementById("typewriter");
-  const text = "Hi, ich bin Ricci";
   let index = 0;
   function type() {
     if (typewriter && index < text.length) {
@@ -45,3 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   type();
 });
+
+// Formular Bestätigung
+function showMessage() {
+  const confirmText = document.getElementById("confirmation");
+  if (confirmText) {
+    confirmText.style.display = "block";
+    setTimeout(() => (confirmText.style.display = "none"), 4000);
+  }
+  return true;
+}

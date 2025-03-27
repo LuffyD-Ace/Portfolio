@@ -1,18 +1,24 @@
-/* Grundfarben und Design */
+/* Basisfarben (Light & Dark) + Smooth Scroll */
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
-  --header-bg-color: #e0e0e0;
-  --button-bg: #000000;
+  --header-bg: #f0f0f0;
+  --link-color: #007acc;
+  --button-bg: #007acc;
   --button-text: #ffffff;
+  --social-bg: #ddd;
+  --social-text: #000;
 }
 
 body.dark-mode {
   --bg-color: #121212;
   --text-color: #ffffff;
-  --header-bg-color: #1f1f1f;
-  --button-bg: #ffffff;
-  --button-text: #000000;
+  --header-bg: #1f1f1f;
+  --link-color: #00bcd4;
+  --button-bg: #00bcd4;
+  --button-text: #000;
+  --social-bg: #333;
+  --social-text: #fff;
 }
 
 body {
@@ -20,108 +26,78 @@ body {
   font-family: Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+  scroll-behavior: smooth;
 }
 
-.header-bg {
-  background: linear-gradient(to right, #2193b0, #6dd5ed);
+header {
+  background-color: var(--header-bg);
   padding: 1rem;
   text-align: center;
-  color: white;
-  position: relative;
 }
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-}
-
-.brand {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.desktop-nav {
-  display: flex;
-  gap: 2rem;
-}
-
-.desktop-nav a {
-  color: white;
+nav a {
+  margin: 0 10px;
+  color: var(--link-color);
   text-decoration: none;
-  font-weight: bold;
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  color: white;
-  font-size: 1.5rem;
-  border: none;
-}
-
-.theme-toggle {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-left: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Mobile Menü */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 70%;
-  height: 100%;
-  background-color: var(--header-bg-color);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.hero, .content {
   padding: 2rem;
-  transition: left 0.3s ease;
-  z-index: 1000;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--text-color);
-  font-size: 1.2rem;
-}
-
-.mobile-menu .theme-toggle {
-  margin-top: auto;
-}
-
-/* Anzeige im Mobile-Modus */
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* Content Bereiche */
-.hero {
   text-align: center;
-  padding: 2rem;
 }
 
 img {
   width: 150px;
   border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
+.socials a {
+  margin: 0 10px;
+  color: var(--social-text);
+  background-color: var(--social-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.socials a:hover {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 0.7rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Animationen */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -133,4 +109,16 @@ img {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
 }
