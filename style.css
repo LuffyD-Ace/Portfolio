@@ -8,6 +8,10 @@
   --button-text: #ffffff;
   --social-bg: #ddd;
   --social-text: #000;
+  --button-bg: #000000;       /* schwarz im Lightmode */
+  --button-text: #ffffff;
+}
+
 }
 
 body.dark-mode {
@@ -19,6 +23,8 @@ body.dark-mode {
   --button-text: #000;
   --social-bg: #333;
   --social-text: #fff;
+  --button-bg: #ffffff;       /* weiß im Darkmode */
+  --button-text: #000000;
 }
 
 body {
@@ -112,16 +118,14 @@ button:hover {
 }
 
 .theme-toggle {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: #000;   /* Schwarz im Lightmode */
-  color: #fff;              /* Weißer Text */
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
   padding: 0.5rem 1rem;
-  cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Button wird weiß im Darkmode */
