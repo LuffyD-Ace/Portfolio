@@ -3,22 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kontakt</title>
+  <title>Kontakt – Ricci</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
-  <button id="theme-toggle" class="theme-toggle">🌙 / ☀️</button>
-  <header>
-    <div class="container">
-      <h1 class="fade-in">Kontakt</h1>
-      <nav>
+  <header class="header-bg">
+    <div class="topbar">
+      <div class="brand">Ricci</div>
+      <nav class="desktop-nav">
         <a href="index.html">Start</a>
         <a href="about.html">Über mich</a>
         <a href="contact.html">Kontakt</a>
       </nav>
+      <div class="header-buttons">
+        <button id="theme-toggle" class="theme-toggle">🌙 / ☀️</button>
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+      </div>
     </div>
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="index.html">Start</a>
+      <a href="about.html">Über mich</a>
+      <a href="contact.html">Kontakt</a>
+      <button id="mobile-theme-toggle" class="theme-toggle">🌙 / ☀️</button>
+    </div>
+    <h1 class="fade-in">Kontaktiere mich</h1>
   </header>
+
   <section class="content fade-in">
     <form action="mailto:deine@email.de" method="POST" enctype="text/plain" onsubmit="return showMessage();">
       <label>Name:</label>

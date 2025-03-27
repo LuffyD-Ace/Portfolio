@@ -3,40 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mein Portfolio</title>
+  <title>Ricci – Mein Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
-  <button id="theme-toggle" class="theme-toggle">🌙 / ☀️</button>
-  <header>
-    <div class="container">
-      <h1 class="fade-in">Willkommen auf meinem Portfolio</h1>
-      <nav id="nav">
+  <!-- Headerbereich -->
+  <header class="header-bg">
+    <div class="topbar">
+      <!-- Name links -->
+      <div class="brand">Ricci</div>
+
+      <!-- Navigation zentriert -->
+      <nav class="desktop-nav">
         <a href="index.html">Start</a>
         <a href="about.html">Über mich</a>
         <a href="contact.html">Kontakt</a>
-        <button id="menu-toggle">☰</button>
       </nav>
+
+      <!-- Darkmode Button rechts -->
+      <div class="header-buttons">
+        <button id="theme-toggle" class="theme-toggle">🌙 / ☀️</button>
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+      </div>
     </div>
+
+    <!-- Mobiles Menü -->
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="index.html">Start</a>
+      <a href="about.html">Über mich</a>
+      <a href="contact.html">Kontakt</a>
+      <button id="mobile-theme-toggle" class="theme-toggle">🌙 / ☀️</button>
+    </div>
+
+    <!-- Begrüßung -->
+    <h1 class="fade-in">Willkommen auf meinem Portfolio</h1>
   </header>
+
+  <!-- Hauptinhalt -->
   <section class="hero fade-in">
     <img src="bilder/profilbild.jpg" alt="Profilbild" />
     <h2><span id="typewriter"></span></h2>
     <p>Webdesigner | Entwickler | Kreativer Kopf</p>
-    <div class="socials">
-      <a href="https://instagram.com/" target="_blank">Instagram</a>
-      <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/" target="_blank">GitHub</a>
-    </div>
-  </section>
-  <section class="projects fade-in">
-    <h3>Meine Projekte</h3>
-    <div class="grid">
-      <div class="project-card">Projekt 1</div>
-      <div class="project-card">Projekt 2</div>
-      <div class="project-card">Projekt 3</div>
-    </div>
   </section>
 </body>
 </html>

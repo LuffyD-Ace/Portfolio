@@ -3,25 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Über mich</title>
+  <title>Über mich – Ricci</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
-  <button id="theme-toggle" class="theme-toggle">🌙 / ☀️</button>
-  <header>
-    <div class="container">
-      <h1 class="fade-in">Über mich</h1>
-      <nav>
+  <header class="header-bg">
+    <div class="topbar">
+      <div class="brand">Ricci</div>
+      <nav class="desktop-nav">
         <a href="index.html">Start</a>
         <a href="about.html">Über mich</a>
         <a href="contact.html">Kontakt</a>
       </nav>
+      <div class="header-buttons">
+        <button id="theme-toggle" class="theme-toggle">🌙 / ☀️</button>
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+      </div>
     </div>
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="index.html">Start</a>
+      <a href="about.html">Über mich</a>
+      <a href="contact.html">Kontakt</a>
+      <button id="mobile-theme-toggle" class="theme-toggle">🌙 / ☀️</button>
+    </div>
+    <h1 class="fade-in">Über mich</h1>
   </header>
+
   <section class="content fade-in">
     <h2>Wer bin ich?</h2>
-    <p>Ich bin ein kreativer Full-Stack-Entwickler mit einer Leidenschaft für Design und moderne Webtechnologien.</p>
+    <p>Ich bin Ricci – ein kreativer Entwickler mit einer Leidenschaft für moderne Webtechnologien, cleanen Code und gutes Design. Mein Ziel ist es, digitale Erlebnisse zu schaffen, die sowohl technisch als auch visuell überzeugen.</p>
   </section>
 </body>
 </html>
