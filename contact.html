@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kontakt</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Ricci</title>
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="theme-switch">
-  <input type="checkbox" id="theme-toggle" />
-  <label for="theme-toggle" class="switch">
-    <span class="icon sun">☀️</span>
-    <span class="icon moon">🌙</span>
-    <span class="slider"></span>
-  </label>
-</div>
-  <header>
+  <div class="theme-switch-wrapper">
+    <input type="checkbox" id="theme-switch" />
+    <label for="theme-switch" class="theme-switch">
+      <div class="icons">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </div>
+    </label>
+  </div>
+
+  <header class="header-bg">
     <h1 class="fade-in">Kontaktiere mich</h1>
-    <nav>
+    <nav class="desktop-nav">
       <a href="index.html">Start</a>
       <a href="about.html">Über mich</a>
       <a href="contact.html">Kontakt</a>
     </nav>
   </header>
+
   <section class="content fade-in">
-    <form action="mailto:deine@email.de" method="POST" enctype="text/plain" onsubmit="return showMessage();">
-      <label>Name:</label>
-      <input type="text" name="name" required />
-      <label>E-Mail:</label>
-      <input type="email" name="email" required />
-      <label>Nachricht:</label>
-      <textarea name="message" rows="5" required></textarea>
+    <form class="contact-form" onsubmit="return showMessage();">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="date">Terminwunsch:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="message">Nachricht:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
       <button type="submit">Senden</button>
     </form>
-    <p id="confirmation" style="display:none; margin-top:20px;">✅ Danke für deine Nachricht!</p>
+    <p id="confirmation" style="display:none; margin-top:20px;">✅ Danke für deine Nachricht! (Simuliert)</p>
   </section>
 </body>
 </html>
