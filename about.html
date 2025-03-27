@@ -8,7 +8,14 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <button id="theme-toggle" class="theme-toggle">🌙 / ☀️</button>
+  <div class="theme-switch">
+  <input type="checkbox" id="theme-toggle" />
+  <label for="theme-toggle" class="switch">
+    <span class="icon sun">☀️</span>
+    <span class="icon moon">🌙</span>
+    <span class="slider"></span>
+  </label>
+</div>
   <header>
     <h1 class="fade-in">Über mich</h1>
     <nav>
