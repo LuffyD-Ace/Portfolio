@@ -1,205 +1,68 @@
-/* Basisfarben (Light & Dark) + Smooth Scroll */
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
-  --header-bg: #f0f0f0;
-  --link-color: #007acc;
-  --button-bg: #007acc;
-  --button-text: #ffffff;
-  --social-bg: #ddd;
-  --social-text: #000;
-  --button-bg: #000000;       /* schwarz im Lightmode */
-  --button-text: #ffffff;
-}
-
 }
 
 body.dark-mode {
   --bg-color: #121212;
   --text-color: #ffffff;
-  --header-bg: #1f1f1f;
-  --link-color: #00bcd4;
-  --button-bg: #00bcd4;
-  --button-text: #000;
-  --social-bg: #333;
-  --social-text: #fff;
-  --button-bg: #ffffff;       /* weiß im Darkmode */
-  --button-text: #000000;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s;
-  scroll-behavior: smooth;
-}
-
-header {
-  background-color: var(--header-bg);
-  padding: 1rem;
-  text-align: center;
-}
-
-nav a {
-  margin: 0 10px;
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-.hero, .content {
-  padding: 2rem;
-  text-align: center;
-}
-
-img {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
-
-.socials a {
-  margin: 0 10px;
-  color: var(--social-text);
-  background-color: var(--social-bg);
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.socials a:hover {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-}
-
-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-input, textarea {
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  padding: 0.7rem;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-/* Animationen */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.theme-toggle {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Button wird weiß im Darkmode */
-body.dark-mode .theme-toggle {
-  background-color: #fff;   /* Weißer Button */
-  color: #000;              /* Schwarzer Text */
-}
-
-.theme-switch {
+/* 🌗 Darkmode Switch Style */
+.theme-switch-wrapper {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  z-index: 1000;
 }
 
-.switch {
-  position: relative;
+.theme-switch {
   display: inline-block;
   width: 60px;
-  height: 32px;
-  background-color: #ccc;
-  border-radius: 32px;
+  height: 34px;
+  position: relative;
+  background-color: #f39c12;
+  border-radius: 34px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.switch .icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.theme-switch .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 8px;
+}
+
+.theme-switch .sun,
+.theme-switch .moon {
   font-size: 16px;
-  z-index: 2;
   transition: opacity 0.3s ease;
 }
 
-.switch .sun {
-  left: 10px;
-  opacity: 1;
-}
-
-.switch .moon {
-  right: 10px;
+.theme-switch .moon {
   opacity: 0;
 }
 
-.switch .slider {
-  position: absolute;
-  height: 26px;
-  width: 26px;
-  left: 3px;
-  top: 3px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-  z-index: 1;
-}
-
-/* Checkbox verstecken */
-#theme-toggle {
+#theme-switch {
   display: none;
 }
 
-/* Wenn aktiviert (Darkmode an) */
-#theme-toggle:checked + .switch {
-  background-color: #666;
+#theme-switch:checked + .theme-switch {
+  background-color: #34495e;
 }
 
-#theme-toggle:checked + .switch .slider {
-  transform: translateX(28px);
-}
-
-#theme-toggle:checked + .switch .sun {
+#theme-switch:checked + .theme-switch .sun {
   opacity: 0;
 }
 
-#theme-toggle:checked + .switch .moon {
+#theme-switch:checked + .theme-switch .moon {
   opacity: 1;
 }
