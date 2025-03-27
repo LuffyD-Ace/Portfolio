@@ -10,12 +10,15 @@
 <body>
   <button id="theme-toggle" class="theme-toggle">🌙 / ☀️</button>
   <header>
-    <h1 class="fade-in">Willkommen auf meinem Portfolio</h1>
-    <nav>
-      <a href="index.html">Start</a>
-      <a href="about.html">Über mich</a>
-      <a href="contact.html">Kontakt</a>
-    </nav>
+    <div class="container">
+      <h1 class="fade-in">Willkommen auf meinem Portfolio</h1>
+      <nav id="nav">
+        <a href="index.html">Start</a>
+        <a href="about.html">Über mich</a>
+        <a href="contact.html">Kontakt</a>
+        <button id="menu-toggle">☰</button>
+      </nav>
+    </div>
   </header>
   <section class="hero fade-in">
     <img src="bilder/profilbild.jpg" alt="Profilbild" />
@@ -25,6 +28,14 @@
       <a href="https://instagram.com/" target="_blank">Instagram</a>
       <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
       <a href="https://github.com/" target="_blank">GitHub</a>
+    </div>
+  </section>
+  <section class="projects fade-in">
+    <h3>Meine Projekte</h3>
+    <div class="grid">
+      <div class="project-card">Projekt 1</div>
+      <div class="project-card">Projekt 2</div>
+      <div class="project-card">Projekt 3</div>
     </div>
   </section>
 </body>

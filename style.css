@@ -1,4 +1,4 @@
-/* Basisfarben (Light & Dark) + Smooth Scroll */
+/* Farbvariablen für Light & Dark Mode */
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
@@ -8,6 +8,7 @@
   --button-text: #ffffff;
   --social-bg: #ddd;
   --social-text: #000;
+  --card-bg: #f9f9f9;
 }
 
 body.dark-mode {
@@ -19,6 +20,7 @@ body.dark-mode {
   --button-text: #000;
   --social-bg: #333;
   --social-text: #fff;
+  --card-bg: #1e1e1e;
 }
 
 body {
@@ -26,7 +28,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.6;
   transition: background-color 0.3s, color 0.3s;
   scroll-behavior: smooth;
 }
@@ -37,13 +38,39 @@ header {
   text-align: center;
 }
 
-nav a {
-  margin: 0 10px;
-  color: var(--link-color);
-  text-decoration: none;
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.hero, .content {
+nav a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  #menu-toggle {
+    display: block;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.hero, .content, .projects {
   padding: 2rem;
   text-align: center;
 }
@@ -61,12 +88,6 @@ img {
   padding: 0.5rem 1rem;
   border-radius: 10px;
   text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.socials a:hover {
-  background-color: var(--button-bg);
-  color: var(--button-text);
 }
 
 form {
@@ -79,8 +100,8 @@ form {
 input, textarea {
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
   border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 button {
@@ -97,7 +118,6 @@ button:hover {
   opacity: 0.9;
 }
 
-/* Animationen */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -121,4 +141,23 @@ button:hover {
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.projects .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }

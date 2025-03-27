@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Scroll Animation Delay
   const elements = document.querySelectorAll(".fade-in");
   elements.forEach((el, index) => {
     el.style.animationDelay = `${index * 0.2}s`;
   });
 
-  // Dark Mode Umschalter
   const toggleButton = document.getElementById("theme-toggle");
   const currentTheme = localStorage.getItem("theme");
   if (currentTheme === "dark") {
@@ -18,9 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("theme", mode);
   });
 
-  // Typewriter Effekt
-  const text = "Hi, ich bin [Dein Name]";
   const typewriter = document.getElementById("typewriter");
+  const text = "Hi, ich bin [Dein Name]";
   let index = 0;
   function type() {
     if (typewriter && index < text.length) {
@@ -32,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
   type();
 });
 
-// Formular Bestätigung
 function showMessage() {
   const confirmText = document.getElementById("confirmation");
   if (confirmText) {
