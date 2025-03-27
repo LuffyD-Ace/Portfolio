@@ -135,13 +135,21 @@ button:hover {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--button-bg);
-  color: var(--button-text);
+  background-color: #000;
+  color: #fff;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+/* Wenn Darkmode aktiv: Button wird weiß mit schwarzer Schrift */
+body.dark-mode .theme-toggle {
+  background-color: #fff;
+  color: #000;
+}
+
 
 .projects .grid {
   display: grid;
