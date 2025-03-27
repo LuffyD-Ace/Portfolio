@@ -133,3 +133,73 @@ body.dark-mode .theme-toggle {
   background-color: #fff;   /* Weißer Button */
   color: #000;              /* Schwarzer Text */
 }
+
+.theme-switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+  background-color: #ccc;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.switch .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.switch .sun {
+  left: 10px;
+  opacity: 1;
+}
+
+.switch .moon {
+  right: 10px;
+  opacity: 0;
+}
+
+.switch .slider {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 3px;
+  top: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Checkbox verstecken */
+#theme-toggle {
+  display: none;
+}
+
+/* Wenn aktiviert (Darkmode an) */
+#theme-toggle:checked + .switch {
+  background-color: #666;
+}
+
+#theme-toggle:checked + .switch .slider {
+  transform: translateX(28px);
+}
+
+#theme-toggle:checked + .switch .sun {
+  opacity: 0;
+}
+
+#theme-toggle:checked + .switch .moon {
+  opacity: 1;
+}
