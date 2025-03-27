@@ -115,10 +115,17 @@ button:hover {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--button-bg);
-  color: var(--button-text);
+  background-color: #000;   /* Schwarz im Lightmode */
+  color: #fff;              /* Weißer Text */
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Button wird weiß im Darkmode */
+body.dark-mode .theme-toggle {
+  background-color: #fff;   /* Weißer Button */
+  color: #000;              /* Schwarzer Text */
 }
